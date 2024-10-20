@@ -65,6 +65,9 @@ class StringsMain {
       'assets/templates/mastcard/logo/logo.png';
   static const String transfonyLogo =
       'assets/templates/transfony/images/logo/logo.png';
+  static const String receiveLogo =
+      'assets/templates/mastcard/icons/receive-icon.png';
+
   static const String mycoinLogo = 'assets/templates/mycoin/images/icon.png';
   static const String xcoinLogo = 'assets/templates/xcoin/images/logo/logo.png';
   static const String xnftLogo = 'assets/templates/xnft/images/splash/logo.png';

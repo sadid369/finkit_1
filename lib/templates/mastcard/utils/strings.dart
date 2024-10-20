@@ -28,6 +28,16 @@ class Strings {
       'assets/templates/mastcard/bg/background/email_verification_bg.png';
   static const String forgetPasswordImagePath =
       'assets/templates/mastcard/images/forget_password.png';
+  static const String receiveLogo =
+      'assets/templates/mastcard/icons/receive-icon.png';
+  static const String sendLogo =
+      'assets/templates/mastcard/icons/send-icon.png';
+  static const String walletLogo =
+      'assets/templates/mastcard/icons/wallet-icon.png';
+  static const String profileLogo =
+      'assets/templates/mastcard/icons/profile-image-icon.png';
+  static const String rewardLogo =
+      'assets/templates/mastcard/icons/reward-icon.png';
   static const String congratulationImagePath =
       'assets/templates/mastcard/images/verification.png';
   static const String congratulationEmailImagePath =
@@ -43,6 +53,10 @@ class Strings {
       'assets/templates/mastcard/images/balance.png';
   static const String cardFrontImagePath =
       'assets/templates/mastcard/images/sample_card.png';
+  static const String cardFrontImagePathNew =
+      'assets/templates/mastcard/images/sample_card_new.png';
+  static const String cardFrontImagePathNew2 =
+      'assets/templates/mastcard/images/sample_card_new_2.png';
   static const String dealsImagePath =
       'assets/templates/mastcard/images/deals.png';
   static const String fundImagePath =

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import '../utils/custom_color.dart';
 import '../widgets/dashboard/buy_card_item_widget.dart';
 import '../widgets/dashboard/card_item_widget.dart';
 
@@ -26,10 +27,77 @@ class DashboardController extends GetxController {
     activeIndex.value = value;
   }
 
+  List<Map<String, dynamic>> tData = [
+    {
+      'title': 'Send To Shivraj Patil',
+      'txnDescription': 'Debited from Lifeline Card Wallet',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': -999,
+      'coinAmount': 00.00,
+      'txnType': 'Send',
+    },
+    {
+      'title': 'Received From Shivraj Patil',
+      'txnDescription': 'Credited To Lifeline Card Wallet',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': 999,
+      'coinAmount': 00.00,
+      'txnType': 'Received',
+    },
+    {
+      'title': 'Send To Bnak',
+      'txnDescription': 'Debited from Lifeline Card Wallet',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': -999,
+      'coinAmount': 00.00,
+      'txnType': 'Send',
+    },
+    {
+      'title': 'Rewarded From Refferal',
+      'txnDescription': 'Credited To Lifeline Card Wallet',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': 1000,
+      'coinAmount': 00.00,
+      'txnType': 'Rewarded',
+    },
+    {
+      'title': 'Debited To Udhar',
+      'txnDescription': 'Debited from Lifeline Card Wallet',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': -999,
+      'coinAmount': 00.00,
+      'txnType': 'Debited',
+    },
+  ];
   final List<Map<String, dynamic>> cardList = [
-    {'name': 'Lifeline Card', 'balance': '500'},
-    {'name': 'Lifeline Coin', 'balance': '900'},
-    {'name': 'Cash Back Coin', 'balance': '1200'},
+    {
+      'name': 'Lifeline Card',
+      'balance': '500',
+      "color": CustomColor.primaryColor,
+      'validity': '10/26'
+    },
+    {
+      'name': 'Lifeline Coin',
+      'balance': '900',
+      "color": CustomColor.secondaryColor,
+      'validity': '16/28'
+    },
+    {
+      'name': 'Cash Back Coin',
+      'balance': '1200',
+      "color": CustomColor.screenBGColor,
+      'validity': '19/32'
+    },
   ];
 
   // RxString cardName = ''.obs;

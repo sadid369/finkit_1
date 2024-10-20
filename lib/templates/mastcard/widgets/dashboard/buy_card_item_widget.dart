@@ -22,10 +22,11 @@ class BuyCardItemWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize * 0.8),
       padding: EdgeInsets.symmetric(
-        horizontal: Dimensions.defaultPaddingSize,
-        vertical: Dimensions.defaultPaddingSize * 2,
+        horizontal: Dimensions.defaultPaddingSize * 0.5,
+        // vertical: Dimensions.defaultPaddingSize * 1,
       ),
       width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
           // image: DecorationImage(
           //   image: AssetImage(Strings.giftCard),
@@ -37,7 +38,8 @@ class BuyCardItemWidget extends StatelessWidget {
         children: [
           // _haderTitleWidget(context),
           const Spacer(),
-          _logoWidget(context),
+          // _logoWidget(context),
+          _cardWidget(context),
           _activationFeeWidget(context),
           _giftInfoWidget(context),
           _buyNowButtonWidget(context),
@@ -54,12 +56,47 @@ class BuyCardItemWidget extends StatelessWidget {
     );
   }
 
+  _cardWidget(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.width / 2,
+      margin: EdgeInsets.symmetric(
+        vertical: Dimensions.marginSize * 1.5,
+      ),
+      decoration: const BoxDecoration(
+        // border: Border.all(color: Colors.black),
+        image: DecorationImage(
+          image: AssetImage(Strings.cardFrontImagePathNew),
+        ),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: MediaQuery.of(context).size.width * 0.025,
+            left: MediaQuery.of(context).size.width * 0.1,
+            child: Text(
+              'SATISH KADAM',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          Positioned(
+            bottom: MediaQuery.of(context).size.width * 0.025,
+            left: MediaQuery.of(context).size.width * 0.44,
+            child: Text(
+              '10/26',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   _activationFeeWidget(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: Dimensions.marginSize * 0.8),
+      margin: EdgeInsets.symmetric(vertical: Dimensions.marginSize * 0.5),
       child: RichText(
         text: TextSpan(
-          text: '\$10.00',
+          text: '\₹10.00',
           style: TextStyle(
             color: CustomColor.primaryColor,
             fontSize: Dimensions.extraLargeTextSize * 1.2,

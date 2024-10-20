@@ -78,6 +78,7 @@ dependencies:
   horizontal_picker: ^1.2.0
   modal_bottom_sheet: ^3.0.0
   syncfusion_flutter_charts: ^27.1.53
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:
