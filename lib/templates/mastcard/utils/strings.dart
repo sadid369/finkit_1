@@ -32,6 +32,8 @@ class Strings {
       'assets/templates/mastcard/icons/receive-icon.png';
   static const String sendLogo =
       'assets/templates/mastcard/icons/send-icon.png';
+  static const String coinLogo =
+      'assets/templates/mastcard/icons/coin-icon.png';
   static const String walletLogo =
       'assets/templates/mastcard/icons/wallet-icon.png';
   static const String profileLogo =

@@ -79,6 +79,48 @@ class DashboardController extends GetxController {
       'txnType': 'Debited',
     },
   ];
+  List<Map<String, dynamic>> tCoinData = [
+    {
+      'title': 'Received From CashBack Coin Wallet',
+      'txnDescription': 'Lifeline Coin Was Created',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': 3000,
+      'coinAmount': 3,
+      'txnType': 'Received',
+    },
+    {
+      'title': 'Received From CashBack Coin Wallet',
+      'txnDescription': 'Lifeline Coin Was Created',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': 3000,
+      'coinAmount': 3,
+      'txnType': 'Received',
+    },
+    {
+      'title': 'Received From CashBack Coin Wallet',
+      'txnDescription': 'Lifeline Coin Was Created',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': 3000,
+      'coinAmount': 3,
+      'txnType': 'Received',
+    },
+    {
+      'title': 'Received From CashBack Coin Wallet',
+      'txnDescription': 'Lifeline Coin Was Created',
+      'subTitle': 'Cashback Coin Earned',
+      'date': '23rd Feb, 2024 . 11.35PM',
+      'txnId': 'T67642578547',
+      'amount': 3000,
+      'coinAmount': 3,
+      'txnType': 'Received',
+    },
+  ];
   final List<Map<String, dynamic>> cardList = [
     {
       'name': 'Lifeline Card',
