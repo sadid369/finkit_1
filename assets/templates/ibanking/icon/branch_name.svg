@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="branch_name" transform="translate(-4.5 -1.5)">
+    <path id="Path_102" data-name="Path 102" d="M18.616,20.763A1.65,1.65,0,0,0,18,22.05V28.1h7.7a2.206,2.206,0,0,0,2.2-2.2V19.322a9.868,9.868,0,0,0-9.284,1.441Z" transform="translate(-3.6 -4.6)" fill="#565656"/>
+    <path id="Path_103" data-name="Path 103" d="M30.5,7A5.5,5.5,0,1,1,25,1.5,5.5,5.5,0,0,1,30.5,7Z" transform="translate(-4 0)" fill="#565656"/>
+    <path id="Path_104" data-name="Path 104" d="M13.85,7.8a7.111,7.111,0,0,1,.814-3.3H6.7A2.206,2.206,0,0,0,4.5,6.7V22.1a2.2,2.2,0,0,0,.649,1.551l10.8-10.8A7.079,7.079,0,0,1,13.85,7.8Z" transform="translate(0 -0.8)" fill="#565656"/>
+  </g>
+</svg>

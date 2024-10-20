@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="162.397" height="189.903" viewBox="0 0 162.397 189.903">
+  <g id="Verification" transform="translate(-149.914 -212.935)">
+    <path id="Icon_awesome-check-circle" data-name="Icon awesome-check-circle" d="M125.686,63.124A62.562,62.562,0,1,1,63.124.563,62.561,62.561,0,0,1,125.686,63.124ZM55.888,96.25,102.3,49.833a4.036,4.036,0,0,0,0-5.708L96.6,38.417a4.036,4.036,0,0,0-5.708,0L53.033,76.272,35.36,58.6a4.037,4.037,0,0,0-5.708,0l-5.708,5.708a4.036,4.036,0,0,0,0,5.708L50.179,96.25A4.036,4.036,0,0,0,55.888,96.25Z" transform="translate(168.216 241.15)" fill="#5662c1"/>
+    <g id="Group_49" data-name="Group 49" transform="translate(149.914 212.935)">
+      <circle id="Ellipse_9" data-name="Ellipse 9" cx="10.495" cy="10.495" r="10.495" transform="translate(119.312)" fill="#5662c1" opacity="0.7"/>
+      <circle id="Ellipse_10" data-name="Ellipse 10" cx="5.524" cy="5.524" r="5.524" transform="translate(0 62.97)" fill="#5662c1" opacity="0.5"/>
+      <ellipse id="Ellipse_11" data-name="Ellipse 11" cx="2.762" cy="3.314" rx="2.762" ry="3.314" transform="translate(135.883 170.13)" fill="#5662c1" opacity="0.3"/>
+      <path id="Polygon_1" data-name="Polygon 1" d="M6.022,0l6.022,10.539H0Z" transform="matrix(0.921, 0.391, -0.391, 0.921, 47.812, 175.495)" fill="#5662c1" opacity="0.8"/>
+      <path id="Polygon_2" data-name="Polygon 2" d="M3.011,0,6.022,4.517H0Z" transform="translate(53.931 39.488) rotate(150)" fill="#5662c1" opacity="0.3"/>
+      <path id="Polygon_3" data-name="Polygon 3" d="M3.764,0,7.528,6.022H0Z" transform="matrix(0.259, -0.966, 0.966, 0.259, 154.631, 105.708)" fill="#5662c1" opacity="0.5"/>
+    </g>
+  </g>
+</svg>

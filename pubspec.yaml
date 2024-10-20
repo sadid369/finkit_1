@@ -1,0 +1,332 @@
+name: finkit
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  get: ^4.6.6
+  flutter_screenutil: ^5.9.3
+  google_fonts: ^6.2.1
+  font_awesome_flutter: ^10.7.0
+  country_code_picker: ^3.0.0
+  material_design_icons_flutter: ^7.0.7296
+  get_storage: ^2.1.1
+  logger: ^2.4.0
+  pin_code_fields: ^8.0.1
+  intl: ^0.19.0
+  image_picker: ^1.1.2
+  dotted_line: ^3.2.3
+  flutter_svg: ^2.0.10+1
+  smooth_page_indicator: ^1.2.0+3
+  carousel_slider: ^5.0.0
+  timelines: ^0.1.0
+  dropdown_button2: ^2.3.9
+  dotted_border: ^2.1.0
+  liquid_swipe: ^3.1.0
+  flip_card: ^0.7.0
+  percent_indicator: ^4.2.3
+  badges: ^3.1.2
+  country_currency_pickers: ^3.0.0
+  url_launcher: ^6.3.1
+  flutter_rating_bar: ^4.0.1
+  r_dotted_line_border: ^0.1.1
+  file_picker: ^8.1.2
+  timeline_tile: ^2.0.0
+  currency_picker: ^2.0.21
+  in_app_review: ^2.0.9
+  flutter_zoom_drawer: ^3.2.0
+  flutter_fadein: ^2.0.0
+  wave: ^0.2.2
+  fl_chart: ^0.69.0
+  flutter_staggered_grid_view: ^0.4.0
+  syncfusion_flutter_gauges: ^27.1.53
+  country_list_pick: ^1.0.1+6
+  table_calendar: ^3.1.2
+  grouped_list: ^6.0.0
+  glassmorphism: ^3.0.0
+  datepicker_dropdown: ^0.1.5
+  horizontal_picker: ^1.2.0
+  modal_bottom_sheet: ^3.0.0
+  syncfusion_flutter_charts: ^27.1.53
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^4.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/logo/
+    - assets/templates/qrpay/BG/
+    - assets/templates/qrpay/Clipart/
+    - assets/templates/qrpay/Icon/
+    - assets/templates/qrpay/Logo/
+    - assets/templates/qrpay/Onboard/
+
+    - assets/templates/xpay/icons/
+    - assets/templates/xpay/images/dashboard/
+    - assets/templates/xpay/images/flag/
+    - assets/templates/xpay/images/logo/
+    - assets/templates/xpay/images/onboard/
+    - assets/templates/xpay/images/
+    - assets/templates/xpay/images/pay_bill/
+
+    - assets/templates/xpaypro/icons/
+    - assets/templates/xpaypro/images/dashboard/
+    - assets/templates/xpaypro/images/flag/
+    - assets/templates/xpaypro/images/logo/
+    - assets/templates/xpaypro/images/onboard/
+    - assets/templates/xpaypro/images/
+    - assets/templates/xpaypro/images/pay_bill/
+
+    - assets/templates/xpay_merchant/icons/
+    - assets/templates/xpay_merchant/images/dashboard/
+    - assets/templates/xpay_merchant/images/logo/
+    - assets/templates/xpay_merchant/images/onboard/
+    - assets/templates/xpay_merchant/images/
+
+    - assets/templates/xpay_agent/icons/
+    - assets/templates/xpay_agent/images/dashboard/
+    - assets/templates/xpay_agent/images/logo/
+    - assets/templates/xpay_agent/images/onboard/
+    - assets/templates/xpay_agent/images/
+
+    - assets/templates/nfcpay/bg/
+    - assets/templates/nfcpay/card/
+    - assets/templates/nfcpay/clipart/
+    - assets/templates/nfcpay/icon/
+    - assets/templates/nfcpay/logo/
+    - assets/templates/nfcpay/onboard/
+
+    - assets/templates/walletium/images/bg/
+    - assets/templates/walletium/images/country/
+    - assets/templates/walletium/images/onboard/
+    - assets/templates/walletium/images/others/
+    - assets/templates/walletium/images/people/
+    - assets/templates/walletium/images/splash/
+    - assets/templates/walletium/images/
+
+    - assets/templates/xwallet/flag/
+    - assets/templates/xwallet/icons/
+    - assets/templates/xwallet/images/
+    - assets/templates/xwallet/svg/
+    - assets/templates/xwallet/svg/gateway/
+    - assets/templates/xwallet/images/onboard/
+
+    - assets/templates/ibanking/background/
+    - assets/templates/ibanking/clipart/
+    - assets/templates/ibanking/icon/
+    - assets/templates/ibanking/logo/
+    - assets/templates/ibanking/onboard/
+    - assets/templates/ibanking/ibanking_logo/Apps/
+
+    - assets/templates/xbank/flag/
+    - assets/templates/xbank/icons/
+    - assets/templates/xbank/images/
+    - assets/templates/xbank/images/onboard/
+    - assets/templates/xbank/svg/
+    - assets/templates/xbank/svg/gateway/
+
+    - assets/templates/remesa/images/bg/
+    - assets/templates/remesa/images/flag/
+    - assets/templates/remesa/images/icons/
+    - assets/templates/remesa/images/onboard/
+    - assets/templates/remesa/images/others/
+    - assets/templates/remesa/images/splash/
+
+    - assets/templates/xremit/BG/
+    - assets/templates/xremit/Clipart/
+    - assets/templates/xremit/flag/
+    - assets/templates/xremit/Icons/
+    - assets/templates/xremit/Logo/
+    - assets/templates/xremit/Payment Gateway/
+    - assets/templates/xremit/People/
+
+    - assets/templates/cardRemit/icons/
+    - assets/templates/cardRemit/images/
+    - assets/templates/cardRemit/images/dashboard/
+    - assets/templates/cardRemit/images/logo/
+    - assets/templates/cardRemit/images/onboard/
+    - assets/templates/cardRemit/images/pay_bill/
+
+    - assets/templates/adcard/card/
+    - assets/templates/adcard/clipart/
+    - assets/templates/adcard/icon/
+    - assets/templates/adcard/logo/
+    - assets/templates/adcard/onboard/
+    - assets/templates/adcard/qr/
+
+    - assets/templates/mastcard/bg/background/
+    - assets/templates/mastcard/bg/cards/
+    - assets/templates/mastcard/icons/
+    - assets/templates/mastcard/images/
+    - assets/templates/mastcard/logo/
+
+    - assets/templates/transfony/images/logo/
+    - assets/templates/transfony/images/onboard/
+
+    - assets/templates/mycoin/icons/
+    - assets/templates/mycoin/images/
+    - assets/templates/mycoin/images/onboard/
+    - assets/templates/mycoin/svg/
+    - assets/templates/mycoin/svg/gateway/
+
+    - assets/templates/xcoin/images/home/
+    - assets/templates/xcoin/images/icon/
+    - assets/templates/xcoin/images/logo/
+    - assets/templates/xcoin/images/onboard/
+    - assets/templates/xcoin/images/addwallet/
+
+    - assets/templates/xnft/images/
+    - assets/templates/xnft/images/welcome/
+    - assets/templates/xnft/images/auth/
+    - assets/templates/xnft/images/grid/
+    - assets/templates/xnft/images/logo/
+    - assets/templates/xnft/images/onboard/
+    - assets/templates/xnft/images/splash/
+
+    - assets/templates/xtrading/Clipart/
+    - assets/templates/xtrading/Icon BG/
+    - assets/templates/xtrading/Icons/
+    - assets/templates/xtrading/Logo/
+    - assets/templates/xtrading/Onboard Anime/
+    - assets/templates/xtrading/user/
+    - assets/templates/xtrading/user/People/
+
+    - assets/templates/xtrade/countries/
+    - assets/templates/xtrade/flags_icons/
+    - assets/templates/xtrade/icons/
+    - assets/templates/xtrade/icons/svg/
+    - assets/templates/xtrade/images/
+    - assets/templates/xtrade/logo/
+
+    - assets/templates/xcrypto/images/auth/
+    - assets/templates/xcrypto/images/buy/
+    - assets/templates/xcrypto/images/chart/
+    - assets/templates/xcrypto/images/dashboard/
+    - assets/templates/xcrypto/images/drawer/
+    - assets/templates/xcrypto/images/onboard/
+    - assets/templates/xcrypto/images/portfolio/
+    - assets/templates/xcrypto/images/profile/
+    - assets/templates/xcrypto/images/sell/
+    - assets/templates/xcrypto/images/splash/
+    - assets/templates/xcrypto/images/
+
+    - assets/templates/xfunding/images/bg/
+    - assets/templates/xfunding/images/country/
+    - assets/templates/xfunding/images/onboard/
+    - assets/templates/xfunding/images/splash/
+    - assets/templates/xfunding/images/
+
+    - assets/templates/efunding/images/bg/
+    - assets/templates/efunding/images/country/
+    - assets/templates/efunding/images/onboard/
+    - assets/templates/efunding/images/others/
+    - assets/templates/efunding/images/splash/
+
+    - assets/templates/smmhub/clipart/
+    - assets/templates/smmhub/icon/
+    - assets/templates/smmhub/logo/
+    - assets/templates/smmhub/onboard/
+    - assets/templates/smmhub/others/
+    - assets/templates/smmhub/
+
+    - assets/templates/escroc/user/
+    - assets/templates/escroc/PaymentGateway/
+    - assets/templates/escroc/Onboard/
+    - assets/templates/escroc/Logo/
+    - assets/templates/escroc/Icons/
+    - assets/templates/escroc/BG/
+    - assets/templates/escroc/Clipart/
+
+    - assets/templates/gameshop/Clipart/
+    - assets/templates/gameshop/Game Banner/
+    - assets/templates/gameshop/Icons/
+    - assets/templates/gameshop/logo/
+    - assets/templates/gameshop/Onboard/
+
+    - assets/templates/crypinvest/images/country/
+    - assets/templates/crypinvest/images/onboard/
+    - assets/templates/crypinvest/images/icons/
+    - assets/templates/crypinvest/images/
+
+    - assets/templates/moneymate/bg/
+    - assets/templates/moneymate/CartoonCharecter/
+    - assets/templates/moneymate/clipart/
+    - assets/templates/moneymate/icon/
+    - assets/templates/moneymate/icons_svg/
+    - assets/templates/moneymate/main_icon/
+    - assets/templates/moneymate/onboard/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
