@@ -134,7 +134,7 @@ class Strings {
       'Your account has been\n successfully verified for using';
 
   // Dashboard
-  static const String dashboard = 'Dashboard';
+  static const String dashboard = 'Wallet and Card';
   static const String buyCard = 'Buy Card';
   static const String balance = 'Balance';
   static const String otpMessage = 'Enter the code sned to +1 XXXX XXXX X989';

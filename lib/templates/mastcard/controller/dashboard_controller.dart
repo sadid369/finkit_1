@@ -135,7 +135,7 @@ class DashboardController extends GetxController {
       'validity': '16/28'
     },
     {
-      'name': 'Cash Back Coin',
+      'name': 'CashBack Coin',
       'balance': '1200',
       "color": CustomColor.screenBGColor,
       'validity': '19/32'
