@@ -1,4 +1,6 @@
+import 'package:finkit/templates/mastcard/widgets/triangle_button.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:finkit/templates/mastcard/utils/custom_color.dart';
 import 'package:finkit/templates/mastcard/utils/custom_style.dart';
@@ -29,9 +31,9 @@ class DashboardScreen extends StatelessWidget {
   // body widget containing all widget elements
   _bodyWidget(BuildContext context, DashboardController controller) {
     return Obx(() => SizedBox(
-          height: MediaQuery.of(context).size.height,
+          // height: MediaQuery.of(context).size.height,
           child: ListView(
-            physics: const NeverScrollableScrollPhysics(),
+            // physics: const NeverScrollableScrollPhysics(),
             children: [
               SizedBox(
                 height: Dimensions.heightSize,
@@ -78,15 +80,22 @@ class DashboardScreen extends StatelessWidget {
       child: ListView(
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          _topBarWidget(context),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // _topBarWidget(context),
+              Gap(Dimensions.widthSize * 7),
+            ],
+          ),
           addVerticalSpace(Dimensions.heightSize),
           _headerTextWidget(context),
-          SizedBox(
-            height: controller.isTransaction.value == true
-                ? MediaQuery.of(context).size.height / 2
-                : MediaQuery.of(context).size.height * 0.197,
-            child: transactionWidget(context),
-          )
+          // SizedBox(
+          //   height: controller.isTransaction.value == true
+          //       ? MediaQuery.of(context).size.height / 2
+          //       : MediaQuery.of(context).size.height * 0.197,
+          //   child: transactionWidget(context),
+          // )
+          transactionWidget(context),
         ],
       ),
     );
@@ -138,16 +147,50 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
+  // _topBarWidget(BuildContext context) {
+  //   return InkWell(
+  //     child: Container(
+  //       alignment: Alignment.topCenter,
+  //       height: Dimensions.heightSize * 0.3,
+  //       margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize * 6.5),
+  //       decoration: BoxDecoration(
+  //           borderRadius: BorderRadius.circular(Dimensions.radius * 2),
+  //           // border: Border.all(color: Colors.black),
+  //           color: CustomColor.screenBGColor),
+  //     ),
+  //     onTap: () {
+  //       controller.isTransaction.value = !controller.isTransaction.value;
+  //     },
+  //   );
+  // }
   _topBarWidget(BuildContext context) {
     return InkWell(
-      child: Container(
-        alignment: Alignment.topCenter,
-        height: Dimensions.heightSize * 0.3,
-        margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize * 6.5),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dimensions.radius * 2),
-            // border: Border.all(color: Colors.black),
-            color: CustomColor.screenBGColor),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          // shape: LinearBorder(),
+          padding: EdgeInsets.zero,
+          backgroundColor: CustomColor.primaryColor.withOpacity(0.6),
+        ),
+        onPressed: () {
+          controller.isTransaction.value = !controller.isTransaction.value;
+        },
+        child: RotationTransition(
+          turns: AlwaysStoppedAnimation(
+              controller.isTransaction.value == false ? 0 : 180 / 360),
+          child: Center(
+            child: CustomPaint(
+              painter: TrianglePainter(
+                strokeColor: CustomColor.screenBGColor,
+                strokeWidth: 3,
+                paintingStyle: PaintingStyle.fill,
+              ),
+              child: Container(
+                height: 13,
+                width: 13,
+              ),
+            ),
+          ),
+        ),
       ),
       onTap: () {
         controller.isTransaction.value = !controller.isTransaction.value;
@@ -164,9 +207,15 @@ class DashboardScreen extends StatelessWidget {
               ),
           alignment: Alignment.topLeft,
           margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize),
-          child: Text(
-            Strings.transactionHistory,
-            style: CustomStyle.commonTextTitle,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                Strings.transactionHistory,
+                style: CustomStyle.commonTextTitle,
+              ),
+              // _topBarWidget(context)
+            ],
           ),
         ),
         const Divider(thickness: 1),
