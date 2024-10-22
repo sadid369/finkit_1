@@ -22,6 +22,11 @@ class DashboardController extends GetxController {
     currentText.value = value;
   }
 
+  RxBool isOrder = true.obs;
+  changeIsOrder(value) {
+    isOrder.value = value;
+  }
+
   RxInt activeIndex = 0.obs;
   changeIndicator(int value) {
     activeIndex.value = value;

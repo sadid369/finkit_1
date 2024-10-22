@@ -1,16 +1,13 @@
 import 'package:finkit/templates/mastcard/controller/dashboard_controller.dart';
-import 'package:finkit/templates/mastcard/utils/custom_style.dart';
 import 'package:finkit/templates/mastcard/widgets/transaction_card.dart';
 import 'package:finkit/templates/mastcard/widgets/transaction_cash_back_card.dart';
+import 'package:finkit/templates/mastcard/widgets/transaction_cash_back_order_card%20.dart';
 import 'package:finkit/templates/mastcard/widgets/transaction_coin_card_.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controller/deposit_controller.dart';
-import '../data/transcation_list.dart';
 import '../utils/custom_color.dart';
 import '../utils/dimensions.dart';
-import 'custom_history_widget.dart';
 
 Widget transactionWidget(BuildContext context) {
   final controller = Get.put(DashboardController());
@@ -22,64 +19,73 @@ Widget transactionWidget(BuildContext context) {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: Get.width * 0.008,
-                      vertical: Get.width * 0.008,
-                    ),
-                    margin: EdgeInsets.only(bottom: Get.height * 0.01),
-                    // height: 20,
-                    // width: 20,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      // shape: BoxShape.circle,
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(Get.width * 0.02),
-                    ),
-                    child: Text(
-                      'CashBack From Order',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: Dimensions.smallestTextSize,
-                        fontWeight: FontWeight.w600,
+                  InkWell(
+                    onTap: () {
+                      controller.changeIsOrder(!controller.isOrder.value);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Get.width * 0.008,
+                        vertical: Get.width * 0.008,
                       ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: Get.width * 0.008,
-                      vertical: Get.width * 0.008,
-                    ),
-                    margin: EdgeInsets.only(bottom: Get.height * 0.01),
-                    // height: 20,
-                    // width: 20,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      // shape: BoxShape.circle,
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(Get.width * 0.02),
-                    ),
-                    child: Text('CashBack From Referral',
+                      margin: EdgeInsets.only(bottom: Get.height * 0.01),
+                      decoration: BoxDecoration(
+                        color: controller.isOrder.value
+                            ? CustomColor.primaryColor.withOpacity(0.3)
+                            : Colors.white,
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(Get.width * 0.02),
+                      ),
+                      child: Text(
+                        'CashBack From Order',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: Dimensions.smallestTextSize,
                           fontWeight: FontWeight.w600,
-                        )),
+                        ),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      controller.changeIsOrder(!controller.isOrder.value);
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Get.width * 0.008,
+                        vertical: Get.width * 0.008,
+                      ),
+                      margin: EdgeInsets.only(bottom: Get.height * 0.01),
+                      decoration: BoxDecoration(
+                        color: !controller.isOrder.value
+                            ? CustomColor.primaryColor.withOpacity(0.3)
+                            : Colors.white,
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(Get.width * 0.02),
+                      ),
+                      child: Text(
+                        'CashBack From Referral',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: Dimensions.smallestTextSize,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               )
             : Container(),
+        Divider(
+          color: CustomColor.borderColor,
+          thickness: 2,
+        ),
         Expanded(
           child: ListView.builder(
             itemCount: controller.activeIndex.value == 0
                 ? controller.tData.length
                 : controller.tCoinData.length,
             itemBuilder: (BuildContext context, int index) {
-              // return CustomHistoryWidget(
-              //   date: transactionList[index].date,
-              //   amount: transactionList[index].amount,
-              //   isDeposit: transactionList[index].isDeposit,
-              // );
               return controller.activeIndex.value == 0
                   ? TransactionCard(
                       height: Get.height,
@@ -107,18 +113,33 @@ Widget transactionWidget(BuildContext context) {
                           txnDescription: controller.tCoinData[index]
                               ['txnDescription'],
                         )
-                      : TransactionCashBackRefCard(
-                          height: Get.height,
-                          width: Get.width,
-                          title: 'CashBack From Referral Level 1',
-                          subTitle: "Promote Lifelinekart for sanjay jadhav",
-                          date: '14 Sep 2023, 03:14 PM',
-                          txnId: 'Upline Name : satish kadam',
-                          amount: double.parse('1000.00'),
-                          coinAmount: double.parse('1000.00'),
-                          txnType: controller.tCoinData[index]['txnType'],
-                          txnDescription: 'Credited To CashBack Coin Wallet',
-                        );
+                      : controller.isOrder.value == false
+                          ? TransactionCashBackRefCard(
+                              height: Get.height,
+                              width: Get.width,
+                              title: 'CashBack From Referral Level 1',
+                              subTitle:
+                                  "Promote Lifelinekart for sanjay jadhav",
+                              date: '14 Sep 2023, 03:14 PM',
+                              txnId: 'Upline Name : satish kadam',
+                              amount: double.parse('1000.00'),
+                              coinAmount: double.parse('1000.00'),
+                              txnType: controller.tCoinData[index]['txnType'],
+                              txnDescription:
+                                  'Credited To CashBack Coin Wallet',
+                            )
+                          : TransactionCashBackOrderCard(
+                              height: Get.height,
+                              width: Get.width,
+                              title: 'Received From Order',
+                              subTitle: "437555",
+                              date: '14 Sep 2023, 03:14 PM',
+                              txnId: '',
+                              amount: double.parse('1000.00'),
+                              coinAmount: double.parse('1000.00'),
+                              txnType: controller.tCoinData[index]['txnType'],
+                              txnDescription: '600',
+                            );
             },
           ),
         ),
