@@ -2,6 +2,8 @@ import 'package:finkit/templates/mastcard/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../utils/custom_color.dart';
+
 class TransactionCoinCard extends StatelessWidget {
   final double height;
   final double width;
@@ -37,10 +39,7 @@ class TransactionCoinCard extends StatelessWidget {
       height: height * 0.08,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(
-          color: Color(0xff0BBC18),
-          width: 1,
-        ),
+        border: Border(bottom: BorderSide(color: CustomColor.borderColor)),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
