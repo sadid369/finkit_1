@@ -198,6 +198,7 @@ cookies. Cookies can also help us to personalize web content and meet.''';
 //profile
 
   static const String profile = 'Profile';
+  static const String updateYourPhoto = 'Update your photo';
   static const String editProfile = 'Edit Profile';
   static const String user = 'Mrinal Bitarcin';
   static const String userId = 'user id:';

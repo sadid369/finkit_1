@@ -2,7 +2,9 @@ import 'package:finkit/templates/mastcard/utils/dimensions.dart';
 import 'package:finkit/templates/mastcard/utils/size.dart';
 import 'package:finkit/templates/mastcard/widgets/buttons/primary_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../routes/mastcard_routes.dart';
 import '../../utils/custom_color.dart';
 import '../../utils/strings.dart';
 
@@ -134,7 +136,9 @@ class BuyCardItemWidget extends StatelessWidget {
       margin: EdgeInsets.only(top: Dimensions.marginSize * 1.5),
       child: PrimaryButton(
         title: 'Buy Now',
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Mascardroutes.buyNowScreenMastCard);
+        },
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:finkit/routes/routes.dart';
+import 'package:finkit/templates/mastcard/views/buy_now/buy_now_screen.dart';
 import 'package:get/get.dart';
 import '../binding/splash_binding.dart';
 import '../views/auth/Sign_in_screen.dart';
@@ -25,20 +26,31 @@ import '../widgets/dashboard/buy_card_screen.dart';
 import '../widgets/preview_widget.dart';
 
 class Mascardroutes extends Baseroutes {
-
-static const String splashScreenMastCard = '/splashScreenMastCard';
-  static const String mastcardOnboardScreenMastCard =  '/mastcardOnboardScreenMastCard';
-  static const String mastcardWelcomeScreenMastCard = '/mastcardWelcomeScreenMastCard';
-  static const String mastcardSignInScreenMastCard =  '/mastcardSignInScreenMastCard';
-  static const String oTPVerificationScreenMastCard =   '/oTPVerificationScreenMastCard';
-  static const String resetPasswordScreenMastCard =   '/resetPasswordScreenMastCard';
-  static const String congratulationScreenMastCard = '/congratulationScreenMastCard';
-  static const String mastcardSignUpScreenMastCard =  '/mastcardSignUpScreenMastCard';
-  static const String oTPEmailVerificationScreenMastCard = '/oTPEmailVerificationScreenMastCard';
-  static const String emailCongratulationScreenMastCard = '/emailCongratulationScreenMastCard';
-  static const String mastcardNavigationScreenMastCard =  '/mastcardNavigationScreenMastCard';
-  static const String transactionHistoryScreenMastCard = '/transactionHistoryScreenMastCard';
-  static const String depositHistoryScreenMastCard = '/depositHistoryScreenMastCard';
+  static const String splashScreenMastCard = '/splashScreenMastCard';
+  static const String mastcardOnboardScreenMastCard =
+      '/mastcardOnboardScreenMastCard';
+  static const String mastcardWelcomeScreenMastCard =
+      '/mastcardWelcomeScreenMastCard';
+  static const String mastcardSignInScreenMastCard =
+      '/mastcardSignInScreenMastCard';
+  static const String oTPVerificationScreenMastCard =
+      '/oTPVerificationScreenMastCard';
+  static const String resetPasswordScreenMastCard =
+      '/resetPasswordScreenMastCard';
+  static const String congratulationScreenMastCard =
+      '/congratulationScreenMastCard';
+  static const String mastcardSignUpScreenMastCard =
+      '/mastcardSignUpScreenMastCard';
+  static const String oTPEmailVerificationScreenMastCard =
+      '/oTPEmailVerificationScreenMastCard';
+  static const String emailCongratulationScreenMastCard =
+      '/emailCongratulationScreenMastCard';
+  static const String mastcardNavigationScreenMastCard =
+      '/mastcardNavigationScreenMastCard';
+  static const String transactionHistoryScreenMastCard =
+      '/transactionHistoryScreenMastCard';
+  static const String depositHistoryScreenMastCard =
+      '/depositHistoryScreenMastCard';
   static const String aboutUsScreenMastCard = '/aboutUsScreenMastCard';
   static const String supportScreenMastCard = '/supportScreenMastCard';
   static const String editProfileScreenMastCard = '/editProfileScreenMastCard';
@@ -50,11 +62,11 @@ static const String splashScreenMastCard = '/splashScreenMastCard';
   static const String customPreviewWidgetMastCard =
       '/customPreviewWidgetMastCard';
   static const String buyCardScreenMastCard = '/buyCardScreenMastCard';
-
+  static const String buyNowScreenMastCard = '/buyNowScreenMastCard';
 
   static void initialize() {
     Baseroutes.list.addAll([
-   GetPage(
+      GetPage(
         name: splashScreenMastCard,
         page: () => const SplashScreen(),
         binding: SplashBinding(),
@@ -144,7 +156,10 @@ static const String splashScreenMastCard = '/splashScreenMastCard';
         name: buyCardScreenMastCard,
         page: () => BuyCardScreen(),
       ),
-
+      GetPage(
+        name: buyNowScreenMastCard,
+        page: () => BuyNowScreen(),
+      ),
     ]);
   }
 }
