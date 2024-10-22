@@ -82,6 +82,7 @@ Widget transactionWidget(BuildContext context) {
         ),
         Expanded(
           child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
             itemCount: controller.activeIndex.value == 0
                 ? controller.tData.length
                 : controller.tCoinData.length,
