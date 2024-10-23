@@ -33,10 +33,11 @@ class TransactionCashBackOrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: height * 0.01),
       margin: EdgeInsets.symmetric(
           horizontal: width * 0.01, vertical: height * 0.007),
       width: width,
-      height: height * 0.08,
+      height: height * 0.09,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: CustomColor.borderColor)),
@@ -45,53 +46,50 @@ class TransactionCashBackOrderCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Container(
-                  width: width * 0.14,
-                  padding: EdgeInsets.all(width * 0.01),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // SizedBox(
-                      //   width: width * 0.06,
-                      //   child: Image.asset(
-                      //     Strings.coinLogo,
-                      //   ),
-                      // ),
-                      // Gap(width * 0.008),
-                      Image.asset(Strings.receiveLogo),
-                    ],
-                  )),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                        fontSize: width * 0.03,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                  Text(
-                    'Order Id: $subTitle',
-                    style: TextStyle(
-                        fontSize: width * 0.02, color: Color(0xff065A0C)),
-                  ),
-                  // Text(
-                  //   txnId,
-                  //   style:
-                  //       TextStyle(fontSize: width * 0.02, color: Colors.black),
-                  // ),
-                  Text(
-                    date,
-                    style:
-                        TextStyle(fontSize: width * 0.02, color: Colors.black),
-                  )
-                ],
-              ),
-            ],
+          SizedBox(
+            // height: height * 0.08,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                    width: width * 0.14,
+                    padding: EdgeInsets.all(width * 0.01),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(Strings.receiveLogo, scale: 1.8),
+                      ],
+                    )),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                          fontSize: width * 0.05,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    Text(
+                      'Order Id: $subTitle',
+                      style: TextStyle(
+                          fontSize: width * 0.04, color: Color(0xff065A0C)),
+                    ),
+                    // Text(
+                    //   txnId,
+                    //   style:
+                    //       TextStyle(fontSize: width * 0.02, color: Colors.black),
+                    // ),
+                    Text(
+                      date,
+                      style: TextStyle(
+                          fontSize: width * 0.03, color: Colors.black),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
           Container(
             margin: EdgeInsets.only(right: width * 0.04),

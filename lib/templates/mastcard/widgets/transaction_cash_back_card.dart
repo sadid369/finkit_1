@@ -33,10 +33,11 @@ class TransactionCashBackRefCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: height * 0.01),
       margin: EdgeInsets.symmetric(
           horizontal: width * 0.01, vertical: height * 0.007),
       width: width,
-      height: height * 0.08,
+      height: height * 0.09,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: CustomColor.borderColor)),
@@ -77,17 +78,17 @@ class TransactionCashBackRefCard extends StatelessWidget {
                   Text(
                     subTitle,
                     style:
-                        TextStyle(fontSize: width * 0.02, color: Colors.black),
+                        TextStyle(fontSize: width * 0.022, color: Colors.black),
                   ),
                   Text(
                     txnId,
                     style:
-                        TextStyle(fontSize: width * 0.02, color: Colors.black),
+                        TextStyle(fontSize: width * 0.022, color: Colors.black),
                   ),
                   Text(
                     date,
                     style:
-                        TextStyle(fontSize: width * 0.02, color: Colors.black),
+                        TextStyle(fontSize: width * 0.022, color: Colors.black),
                   )
                 ],
               ),

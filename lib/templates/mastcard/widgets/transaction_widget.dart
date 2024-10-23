@@ -1,4 +1,5 @@
 import 'package:finkit/templates/mastcard/controller/dashboard_controller.dart';
+import 'package:finkit/templates/mastcard/utils/size.dart';
 import 'package:finkit/templates/mastcard/widgets/transaction_card.dart';
 import 'package:finkit/templates/mastcard/widgets/transaction_cash_back_card.dart';
 import 'package:finkit/templates/mastcard/widgets/transaction_cash_back_order_card%20.dart';
@@ -16,65 +17,70 @@ Widget transactionWidget(BuildContext context) {
     child: Column(
       children: [
         controller.activeIndex.value == 2
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      controller.changeIsOrder(!controller.isOrder.value);
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: Get.width * 0.008,
-                        vertical: Get.width * 0.008,
-                      ),
-                      margin: EdgeInsets.only(bottom: Get.height * 0.01),
-                      decoration: BoxDecoration(
-                        color: controller.isOrder.value
-                            ? CustomColor.primaryColor.withOpacity(0.3)
-                            : Colors.white,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(Get.width * 0.02),
-                      ),
-                      child: Text(
-                        'CashBack From Order',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: Dimensions.smallestTextSize,
-                          fontWeight: FontWeight.w600,
+            ? SizedBox(
+                width: Get.width,
+                height: Get.height * 0.04,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        controller.changeIsOrder(!controller.isOrder.value);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Get.width * 0.008,
+                          vertical: Get.width * 0.008,
+                        ),
+                        // margin: EdgeInsets.only(bottom: Get.height * 0.01),
+                        decoration: BoxDecoration(
+                          color: controller.isOrder.value
+                              ? CustomColor.primaryColor.withOpacity(0.3)
+                              : Colors.white,
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(Get.width * 0.02),
+                        ),
+                        child: Text(
+                          'CashBack From Order',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: Dimensions.smallestTextSize,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      controller.changeIsOrder(!controller.isOrder.value);
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: Get.width * 0.008,
-                        vertical: Get.width * 0.008,
-                      ),
-                      margin: EdgeInsets.only(bottom: Get.height * 0.01),
-                      decoration: BoxDecoration(
-                        color: !controller.isOrder.value
-                            ? CustomColor.primaryColor.withOpacity(0.3)
-                            : Colors.white,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(Get.width * 0.02),
-                      ),
-                      child: Text(
-                        'CashBack From Referral',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: Dimensions.smallestTextSize,
-                          fontWeight: FontWeight.w600,
+                    addHorizontalSpace(Get.width * 0.02),
+                    InkWell(
+                      onTap: () {
+                        controller.changeIsOrder(!controller.isOrder.value);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Get.width * 0.008,
+                          vertical: Get.width * 0.008,
+                        ),
+                        // margin: EdgeInsets.only(bottom: Get.height * 0.01),
+                        decoration: BoxDecoration(
+                          color: !controller.isOrder.value
+                              ? CustomColor.primaryColor.withOpacity(0.3)
+                              : Colors.white,
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(Get.width * 0.02),
+                        ),
+                        child: Text(
+                          'CashBack From Referral',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: Dimensions.smallestTextSize,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               )
             : Container(),
         Divider(
