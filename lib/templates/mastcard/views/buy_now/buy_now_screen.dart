@@ -26,59 +26,61 @@ class BuyNowScreen extends StatelessWidget {
       margin: EdgeInsets.only(top: Dimensions.marginSize * 2),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize * 0.5),
-        child: Column(
-          // clipBehavior: Clip.none,
-          // alignment: Alignment.topCenter,
-          children: [
-            _userInformationWidget(context),
-            Divider(
-              thickness: 5,
-            ),
-            addVerticalSpace(Dimensions.widthSize * 1.5),
-            _walletCard(),
-            _cardWidget(context),
-            addVerticalSpace(Dimensions.widthSize * 0.5),
-            _balanceCard(),
-            addVerticalSpace(Dimensions.widthSize * 1.5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text('Send Money', style: CustomStyle.commonTextTitle),
-              ],
-            ),
-            Card(
-              color: Colors.white,
-              child: Container(
-                padding: EdgeInsets.all(Dimensions.marginSize * 0.5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.card_travel,
-                        ),
-                        addHorizontalSpace(Dimensions.widthSize * 0.8),
-                        Text('Name', style: CustomStyle.commonTextTitle),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text('₹645.009', style: CustomStyle.commonTextTitle),
-                        addHorizontalSpace(Dimensions.widthSize * 0.8),
-                        const Icon(
-                          Icons.arrow_drop_down_sharp,
-                          size: 40,
-                        ),
-                      ],
-                    ),
-                  ],
+        child: SingleChildScrollView(
+          child: Column(
+            // clipBehavior: Clip.none,
+            // alignment: Alignment.topCenter,
+            children: [
+              _userInformationWidget(context),
+              Divider(
+                thickness: 5,
+              ),
+              addVerticalSpace(Dimensions.widthSize * 1.5),
+              _walletCard(),
+              _cardWidget(context),
+              addVerticalSpace(Dimensions.widthSize * 0.5),
+              _balanceCard(),
+              addVerticalSpace(Dimensions.widthSize * 1.5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('Send Money', style: CustomStyle.commonTextTitle),
+                ],
+              ),
+              Card(
+                color: Colors.white,
+                child: Container(
+                  padding: EdgeInsets.all(Dimensions.marginSize * 0.5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.card_travel,
+                          ),
+                          addHorizontalSpace(Dimensions.widthSize * 0.8),
+                          Text('Name', style: CustomStyle.commonTextTitle),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text('₹645.009', style: CustomStyle.commonTextTitle),
+                          addHorizontalSpace(Dimensions.widthSize * 0.8),
+                          const Icon(
+                            Icons.arrow_drop_down_sharp,
+                            size: 40,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            addVerticalSpace(Dimensions.widthSize * 0.9),
-            PrimaryButton(title: '+ Add Wallet', onPressed: () {})
-          ],
+              addVerticalSpace(Dimensions.widthSize * 0.9),
+              PrimaryButton(title: '+ Add Wallet', onPressed: () {})
+            ],
+          ),
         ),
       ),
     );
