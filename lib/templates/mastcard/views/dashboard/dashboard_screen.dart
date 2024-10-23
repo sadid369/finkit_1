@@ -56,13 +56,13 @@ class DashboardScreen extends StatelessWidget {
                       ),
                     )
                   : Container(),
-              _transactionWidget(context, controller),
+              _transactionWidget(context),
             ],
           ),
         ));
   }
 
-  _transactionWidget(BuildContext context, DashboardController controller) {
+  _transactionWidget(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,

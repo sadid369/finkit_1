@@ -18,6 +18,7 @@ Widget transactionWidget(BuildContext context) {
         controller.activeIndex.value == 2
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   InkWell(
                     onTap: () {
