@@ -27,8 +27,8 @@ class BuyCardItemWidget extends StatelessWidget {
         horizontal: Dimensions.defaultPaddingSize * 0.5,
         // vertical: Dimensions.defaultPaddingSize * 1,
       ),
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.7,
+      width: Get.width,
+      height: Get.height * 0.7,
       decoration: const BoxDecoration(
           // image: DecorationImage(
           //   image: AssetImage(Strings.giftCard),
@@ -60,7 +60,7 @@ class BuyCardItemWidget extends StatelessWidget {
 
   _cardWidget(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.width / 2,
+      height: Get.width / 2,
       margin: EdgeInsets.symmetric(
         vertical: Dimensions.marginSize * 1.5,
       ),
@@ -73,16 +73,16 @@ class BuyCardItemWidget extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            bottom: MediaQuery.of(context).size.width * 0.025,
-            left: MediaQuery.of(context).size.width * 0.1,
+            bottom: Get.width * 0.025,
+            left: Get.width * 0.1,
             child: Text(
               'SATISH KADAM',
               style: TextStyle(color: Colors.white),
             ),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.width * 0.025,
-            left: MediaQuery.of(context).size.width * 0.44,
+            bottom: Get.width * 0.025,
+            left: Get.width * 0.44,
             child: Text(
               '10/26',
               style: TextStyle(color: Colors.white),

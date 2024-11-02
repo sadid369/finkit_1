@@ -178,16 +178,6 @@ class DashboardController extends GetxController {
       cardExpDate: '11/2024',
       cardNumber: '5366131828291260',
     ),
-    // const MyCardItemWidget(
-    //   cardHolderName: 'test user',
-    //   cardExpDate: '11/2024',
-    //   cardNumber: '5366131828291260',
-    // ),
-    // const MyCardItemWidget(
-    //   cardHolderName: 'test user',
-    //   cardExpDate: '11/2024',
-    //   cardNumber: '5366131828291260',
-    // ),
   ];
 
   final List<BuyCardItemWidget> buyCardSliderList = [

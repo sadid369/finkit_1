@@ -9,78 +9,103 @@ import 'package:finkit/templates/mastcard/utils/dimensions.dart';
 import 'package:finkit/templates/mastcard/utils/strings.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../../widgets/custom_appbar_with_bg.dart';
+
 class BuyNowScreen extends StatelessWidget {
   BuyNowScreen({super.key});
   final profileController = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // backgroundColor: Colors.transparent,
-      backgroundColor: Colors.white,
+    // return Scaffold(
+    //   // backgroundColor: Colors.transparent,
+    //   backgroundColor: Colors.white,
+    //   body: _bodyWidget(context),
+    // );
+    return BackgroundWidget(
+      title: 'Buy Now',
+      // backgroundColor: Colors.white,
       body: _bodyWidget(context),
     );
   }
 
   _bodyWidget(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: Dimensions.marginSize * 2),
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize * 0.5),
-        child: SingleChildScrollView(
-          child: Column(
-            // clipBehavior: Clip.none,
-            // alignment: Alignment.topCenter,
-            children: [
-              _userInformationWidget(context),
-              Divider(
-                thickness: 5,
+      margin: EdgeInsets.symmetric(horizontal: Dimensions.marginSize * 0.5),
+      child: SingleChildScrollView(
+        child: Column(
+          // clipBehavior: Clip.none,
+          // alignment: Alignment.topCenter,
+          children: [
+            _userInformationWidget(context),
+            // Divider(
+            //   thickness: 5,
+            // ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.008,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [
+                    CustomColor.primaryColor,
+                    CustomColor.screenBGColor,
+                  ],
+                ),
               ),
-              addVerticalSpace(Dimensions.widthSize * 1.5),
-              _walletCard(),
-              _cardWidget(context),
-              addVerticalSpace(Dimensions.widthSize * 0.5),
-              _balanceCard(),
-              addVerticalSpace(Dimensions.widthSize * 1.5),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('Send Money', style: CustomStyle.commonTextTitle),
-                ],
-              ),
-              Card(
-                color: Colors.white,
-                child: Container(
-                  padding: EdgeInsets.all(Dimensions.marginSize * 0.5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.card_travel,
-                          ),
-                          addHorizontalSpace(Dimensions.widthSize * 0.8),
-                          Text('Name', style: CustomStyle.commonTextTitle),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text('₹645.009', style: CustomStyle.commonTextTitle),
-                          addHorizontalSpace(Dimensions.widthSize * 0.8),
-                          const Icon(
-                            Icons.arrow_drop_down_sharp,
-                            size: 40,
-                          ),
-                        ],
-                      ),
+            ),
+            addVerticalSpace(Dimensions.widthSize * 1.5),
+            _walletCard(),
+            _cardWidget(context),
+            addVerticalSpace(Dimensions.widthSize * 0.5),
+            _balanceCard(),
+            addVerticalSpace(Dimensions.widthSize * 1.5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('Send Money', style: CustomStyle.commonTextTitle),
+              ],
+            ),
+            Card(
+              color: Colors.white,
+              child: Container(
+                padding: EdgeInsets.all(Dimensions.marginSize * 0.5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.radius * 1.2),
+                  gradient: LinearGradient(
+                    colors: [
+                      CustomColor.primaryColor.withOpacity(0.8),
+                      CustomColor.screenBGColor.withOpacity(0.8),
                     ],
                   ),
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.card_travel,
+                        ),
+                        addHorizontalSpace(Dimensions.widthSize * 0.8),
+                        Text('Name', style: CustomStyle.commonTextTitle),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text('₹645.009', style: CustomStyle.commonTextTitle),
+                        addHorizontalSpace(Dimensions.widthSize * 0.8),
+                        const Icon(
+                          Icons.arrow_drop_down_sharp,
+                          size: 40,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              addVerticalSpace(Dimensions.widthSize * 0.9),
-              PrimaryButton(title: '+ Add Wallet', onPressed: () {})
-            ],
-          ),
+            ),
+            addVerticalSpace(Dimensions.widthSize * 0.9),
+            PrimaryButton(title: '+ Add Wallet', onPressed: () {}),
+            addVerticalSpace(Dimensions.widthSize * 3),
+          ],
         ),
       ),
     );
@@ -93,6 +118,12 @@ class BuyNowScreen extends StatelessWidget {
         border: Border.all(
           color: CustomColor.borderColor,
           width: 1,
+        ),
+        gradient: LinearGradient(
+          colors: [
+            CustomColor.primaryColor.withOpacity(0.8),
+            CustomColor.screenBGColor.withOpacity(0.8),
+          ],
         ),
         borderRadius: BorderRadius.circular(
           Dimensions.radius * 1.5,
@@ -224,7 +255,7 @@ class BuyNowScreen extends StatelessWidget {
 
   _cardWidget(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.width / 2,
+      height: MediaQuery.of(context).size.width / 1.75,
       width: double.infinity,
       margin: EdgeInsets.symmetric(
         vertical: Dimensions.marginSize * 0.5,
@@ -314,7 +345,7 @@ class BuyNowScreen extends StatelessWidget {
               gradient: const LinearGradient(
                 colors: [
                   CustomColor.primaryColor,
-                  CustomColor.secondaryColor,
+                  CustomColor.screenBGColor,
                 ],
               ),
             ),
@@ -340,12 +371,19 @@ class BuyNowScreen extends StatelessWidget {
             top: 44,
             right: 0,
             child: Container(
+              // decoration: BoxDecoration(
+              //     gradient: LinearGradient(
+              //   colors: [
+              //     CustomColor.primaryColor.withOpacity(0.8),
+              //     CustomColor.screenBGColor.withOpacity(0.8),
+              //   ],
+              // )),
               margin: EdgeInsets.only(
                 right: Dimensions.marginSize * 0.5,
               ),
               child: CircleAvatar(
                 radius: Dimensions.radius * 4,
-                backgroundColor: Colors.white,
+                backgroundColor: CustomColor.primaryColor.withOpacity(0.8),
                 child: CircleAvatar(
                   radius: Dimensions.radius * 3.5,
                   backgroundImage: const AssetImage(Strings.profilePic),

@@ -13,7 +13,7 @@ import '../utils/dimensions.dart';
 Widget transactionWidget(BuildContext context) {
   final controller = Get.put(DashboardController());
   return SizedBox(
-    height: MediaQuery.of(context).size.height,
+    height: Get.height,
     child: Column(
       children: [
         controller.activeIndex.value == 2
@@ -97,7 +97,7 @@ Widget transactionWidget(BuildContext context) {
               return controller.activeIndex.value == 0
                   ? TransactionCard(
                       height: Get.height,
-                      width: MediaQuery.of(context).size.width,
+                      width: Get.width,
                       title: controller.tData[index]['title'],
                       subTitle: controller.tData[index]['subTitle'],
                       date: controller.tData[index]['date'],

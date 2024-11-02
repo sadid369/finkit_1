@@ -14,11 +14,11 @@ import 'package:finkit/templates/mastcard/utils/strings.dart';
 
 Widget myCardWidget(BuildContext context, DashboardController controller) {
   return Container(
-    height: MediaQuery.of(context).size.height * 0.48,
-    width: MediaQuery.of(context).size.width,
-    margin: EdgeInsets.only(top: Dimensions.marginSize * 0.5),
+    height: Get.height * 0.48,
+    width: Get.width,
+    margin: EdgeInsets.only(top: Get.height * 0.01),
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(Dimensions.radius * 1.5),
+      borderRadius: BorderRadius.circular(Get.height * 0.03),
       color: CustomColor.secondaryColor.withOpacity(0.3),
     ),
     child: _cardSlider(context, controller),
@@ -27,34 +27,34 @@ Widget myCardWidget(BuildContext context, DashboardController controller) {
 
 _cardSlider(BuildContext context, DashboardController controller) {
   return Container(
-    height: MediaQuery.of(context).size.height * 0.45,
+    height: Get.height * 0.45,
     padding: EdgeInsets.symmetric(
-      horizontal: Dimensions.defaultPaddingSize * 0.5,
-      vertical: Dimensions.defaultPaddingSize * 0.7,
+      horizontal: Get.width * 0.05,
+      vertical: Get.width * 0.05,
     ),
-    // color: CustomColor.screenBGColor,
     child: Obx(
       () => Center(
         child: Column(
           crossAxisAlignment: crossStart,
           children: [
             Text(
-              "${controller.cardList[controller.activeIndex.value]['name']} Wallet ",
-              textAlign: TextAlign.start,
-              style: CustomStyle.commonTextTitle,
-            ),
+                "${controller.cardList[controller.activeIndex.value]['name']} Wallet ",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  color: CustomColor.primaryTextColor,
+                  fontSize: Get.width * 0.05,
+                  fontWeight: FontWeight.w600,
+                )),
             Padding(
               padding: EdgeInsets.only(
-                top: Dimensions.defaultPaddingSize * 0.7,
-                bottom: Dimensions.defaultPaddingSize * 0.8,
+                top: Get.width * 0.05,
+                bottom: Get.width * 0.05,
               ),
               child: GestureDetector(
                 onTap: () {},
                 child: CarouselSlider.builder(
                   itemCount: controller.sliderList.length,
                   itemBuilder: (context, index, realIndex) {
-                    // return _buildSlider(context, index, controller);
-
                     return InkWell(
                       onTap: () {
                         Get.toNamed(Mascardroutes.cardDetailsScreenMastCard);
@@ -86,9 +86,9 @@ _cardSlider(BuildContext context, DashboardController controller) {
   );
 }
 
-_buildSlider(BuildContext context, int index, DashboardController controller) {
-  return controller.sliderList[index];
-}
+// _buildSlider(BuildContext context, int index, DashboardController controller) {
+//   return controller.sliderList[index];
+// }
 
 _buildIndicator(BuildContext context, DashboardController controller) {
   return Center(
@@ -96,8 +96,8 @@ _buildIndicator(BuildContext context, DashboardController controller) {
       activeIndex: controller.activeIndex.value,
       count: controller.sliderList.length,
       effect: SlideEffect(
-        dotHeight: 8,
-        dotWidth: 8,
+        dotHeight: Get.width * 0.02,
+        dotWidth: Get.width * 0.02,
         activeDotColor: CustomColor.primaryColor,
         dotColor: Colors.grey.withOpacity(0.5),
       ),
@@ -141,19 +141,19 @@ _buttonItemWidget(BuildContext context,
     child: Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height / 13,
-          width: Dimensions.heightSize * 4,
+          height: Get.height / 13,
+          width: Get.width * 0.2,
           decoration: BoxDecoration(
               color: CustomColor.secondaryColor.withOpacity(0.5),
               shape: BoxShape.circle),
           child: Image.asset(imagePath),
         ),
-        addVerticalSpace(Dimensions.heightSize * 0.4),
+        addVerticalSpace(Get.height * 0.01),
         Text(
           label,
           textAlign: TextAlign.start,
           style: TextStyle(
-              fontSize: Dimensions.mediumTextSize * 0.7,
+              fontSize: Get.width * 0.035,
               fontWeight: FontWeight.w600,
               color: CustomColor.primaryTextColor),
         ),
@@ -162,72 +162,12 @@ _buttonItemWidget(BuildContext context,
   );
 }
 
-_balanceWidget(BuildContext context,
-    {required String balance, required Color color}) {
-  return Container(
-    padding:
-        EdgeInsets.symmetric(vertical: Dimensions.defaultPaddingSize * 0.1),
-    width: MediaQuery.of(context).size.width,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(Dimensions.radius * 1.5),
-      color: color.withOpacity(0.8),
-    ),
-    child: Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: Dimensions.defaultPaddingSize * 0.5,
-          vertical: Dimensions.defaultPaddingSize * 0.4),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: Dimensions.heightSize * 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Balance \$ $balance.00',
-                style: TextStyle(
-                  fontSize: Dimensions.largeTextSize,
-                  fontWeight: FontWeight.w900,
-                  color: color == CustomColor.secondaryColor
-                      ? CustomColor.primaryTextColor
-                      : CustomColor.secondaryColor,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: Dimensions.heightSize * 0.5,
-          ),
-          SizedBox(
-            height: Dimensions.heightSize * 2,
-          ),
-          Text(
-            '19/10/2024',
-            style: TextStyle(
-              fontSize: Dimensions.smallTextSize,
-              fontWeight: FontWeight.w600,
-              color: color == CustomColor.secondaryColor
-                  ? CustomColor.primaryTextColor
-                  : CustomColor.secondaryColor,
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
 _cardWidget(BuildContext context,
     {required String balance, required Color color, required validity}) {
   return Container(
-    height: MediaQuery.of(context).size.width / 2,
-    margin: EdgeInsets.symmetric(
-        // vertical: Dimensions.marginSize * 1.5,
-        ),
+    height: Get.width / 2,
+    margin: EdgeInsets.symmetric(),
     decoration: const BoxDecoration(
-      // border: Border.all(color: Colors.black),
       image: DecorationImage(
         image: AssetImage(Strings.cardFrontImagePathNew2),
       ),
@@ -235,24 +175,25 @@ _cardWidget(BuildContext context,
     child: Stack(
       children: [
         Positioned(
-          bottom: MediaQuery.of(context).size.width * 0.16,
-          left: MediaQuery.of(context).size.width * 0.23,
+          bottom: Get.width * 0.16,
+          left: Get.width * 0.23,
           child: Text(
             'Balance \₹ $balance.00',
             style: TextStyle(
-                fontSize: Dimensions.largeTextSize * 0.9,
-                fontWeight: FontWeight.w900,
-                color: CustomColor.secondaryColor),
+              fontSize: Get.width * 0.055,
+              fontWeight: FontWeight.w900,
+              color: CustomColor.secondaryColor,
+            ),
           ),
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.width * 0.025,
-          left: MediaQuery.of(context).size.width * 0.54,
+          bottom: Get.width * 0.025,
+          left: Get.width * 0.54,
           child: Text(
             validity,
             style: TextStyle(
               color: Colors.white,
-              fontSize: Dimensions.largeTextSize * 0.7,
+              fontSize: Get.width * 0.038,
             ),
           ),
         ),

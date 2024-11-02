@@ -24,7 +24,7 @@ class FundScreen extends StatelessWidget {
 
   _bodyWidget(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+      height: Get.height,
       margin: EdgeInsets.only(top: Dimensions.marginSize * 1.5),
       padding: EdgeInsets.only(top: Dimensions.marginSize * 0.5),
       decoration: BoxDecoration(
@@ -69,13 +69,14 @@ class FundScreen extends StatelessWidget {
             if (controller.amountController.text.isEmpty) {
               ToastMessage.error("Please enter a value for amount");
             } else {
-              Get.toNamed(Mascardroutes.customPreviewWidgetMastCard, arguments: {
-                'isDeposit': false,
-                'appBarTitle': Strings.fundPreview,
-                'depositAmount': controller.amountController.text,
-                'message':
-                    "You've successfully ${controller.amountController.text} Deposit Money",
-              });
+              Get.toNamed(Mascardroutes.customPreviewWidgetMastCard,
+                  arguments: {
+                    'isDeposit': false,
+                    'appBarTitle': Strings.fundPreview,
+                    'depositAmount': controller.amountController.text,
+                    'message':
+                        "You've successfully ${controller.amountController.text} Deposit Money",
+                  });
             }
           },
         ));

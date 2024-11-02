@@ -25,27 +25,8 @@ class BuyCardScreen extends StatelessWidget {
     return _cardSlider(context, controller);
   }
 
-  // _cardSlider(BuildContext context, DashboardController controller) {
-  //   return Obx(
-  //     () => Container(
-  //       height: MediaQuery.of(context).size.height,
-  //       width: MediaQuery.of(context).size.width,
-  //       // margin: EdgeInsets.only(top: Dimensions.marginSize),
-  //       child: ListView(
-  //         children: [
-  //           _buildSlider(),
-  //           addVerticalSpace(Dimensions.heightSize * 1.8),
-  //           _buildIndicator(context, controller),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
   _cardSlider(BuildContext context, DashboardController controller) {
     return Container(
-      // height: MediaQuery.of(context).size.height,
-      // width: MediaQuery.of(context).size.width,
-      // margin: EdgeInsets.only(top: Dimensions.marginSize),
       child: _buildSlider(),
     );
   }

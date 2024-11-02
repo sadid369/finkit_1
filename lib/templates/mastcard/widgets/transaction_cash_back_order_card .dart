@@ -37,7 +37,7 @@ class TransactionCashBackOrderCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(
           horizontal: width * 0.01, vertical: height * 0.007),
       width: width,
-      height: height * 0.09,
+      height: height * 0.1,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: CustomColor.borderColor)),

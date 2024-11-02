@@ -2,8 +2,6 @@ import 'package:finkit/templates/mastcard/controller/dashboard_controller.dart';
 import 'package:finkit/templates/mastcard/utils/size.dart';
 import 'package:flutter/material.dart';
 import 'package:finkit/templates/mastcard/utils/custom_color.dart';
-import 'package:finkit/templates/mastcard/utils/custom_style.dart';
-import 'package:finkit/templates/mastcard/utils/dimensions.dart';
 import 'package:finkit/templates/mastcard/utils/strings.dart';
 import 'package:get/get.dart';
 import '../../widgets/custom_appbar_with_bg.dart';
@@ -29,15 +27,14 @@ class CardDetailsScreen extends StatelessWidget {
             validity: controller.cardList[controller.activeIndex.value]
                 ['validity']),
         SizedBox(
-          height: Dimensions.heightSize * 2,
+          height: Get.height * 0.05,
         ),
         Container(
-          height: MediaQuery.of(context).size.height / 0.8,
-          padding: EdgeInsets.only(top: Dimensions.marginSize * 0.5),
+          height: Get.height / 0.8,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(Dimensions.radius * 3.5),
-              topRight: Radius.circular(Dimensions.radius * 3.5),
+              topLeft: Radius.circular(Get.height * 0.045),
+              topRight: Radius.circular(Get.height * 0.045),
             ),
             color: Colors.white,
           ),
@@ -49,8 +46,10 @@ class CardDetailsScreen extends StatelessWidget {
 
   _mainBodyWidget(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 5,
-      margin: EdgeInsets.symmetric(vertical: Dimensions.marginSize),
+      height: Get.height / 5,
+      margin: EdgeInsets.symmetric(
+        vertical: Get.width * 0.06,
+      ),
       child: Column(
         children: [
           _headerTitleWidget(context),
@@ -63,12 +62,8 @@ class CardDetailsScreen extends StatelessWidget {
   _cardWidget(BuildContext context,
       {required String balance, required Color color, required validity}) {
     return Container(
-      height: MediaQuery.of(context).size.width / 2,
-      margin: EdgeInsets.symmetric(
-          // vertical: Dimensions.marginSize * 1.5,
-          ),
+      height: Get.width / 2,
       decoration: const BoxDecoration(
-        // border: Border.all(color: Colors.black),
         image: DecorationImage(
           image: AssetImage(Strings.cardFrontImagePathNew2),
         ),
@@ -76,24 +71,25 @@ class CardDetailsScreen extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            bottom: MediaQuery.of(context).size.width * 0.19,
-            left: MediaQuery.of(context).size.width * 0.3,
+            bottom: Get.width * 0.19,
+            left: Get.width * 0.3,
             child: Text(
               'Balance \₹ $balance.00',
               style: TextStyle(
-                  fontSize: Dimensions.largeTextSize * 0.9,
-                  fontWeight: FontWeight.w900,
-                  color: CustomColor.secondaryColor),
+                fontSize: Get.width * 0.055,
+                fontWeight: FontWeight.w900,
+                color: CustomColor.secondaryColor,
+              ),
             ),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.width * 0.025,
-            right: MediaQuery.of(context).size.width * 0.2,
+            bottom: Get.width * 0.05,
+            right: Get.width * 0.2,
             child: Text(
               validity,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: Dimensions.largeTextSize * 0.7,
+                fontSize: Get.width * 0.04,
               ),
             ),
           ),
@@ -108,11 +104,15 @@ class CardDetailsScreen extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: Dimensions.marginSize,
+            horizontal: Get.width * 0.05,
           ),
           child: Text(
             Strings.cardDetails,
-            style: CustomStyle.commonTextTitle,
+            style: TextStyle(
+              color: CustomColor.primaryTextColor,
+              fontSize: Get.width * 0.05,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         const Divider()
@@ -123,7 +123,7 @@ class CardDetailsScreen extends StatelessWidget {
   _cardDetails(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: Dimensions.marginSize,
+        horizontal: Get.width * 0.06,
       ),
       child: Column(
         crossAxisAlignment: crossStart,
@@ -146,7 +146,9 @@ class CardDetailsScreen extends StatelessWidget {
   _spaceBetWidget(String text, String text2,
       {Color? textColor = CustomColor.primaryTextColor}) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: Dimensions.marginSize * 0.5),
+      margin: EdgeInsets.symmetric(
+        vertical: Get.height * 0.015,
+      ),
       child: Row(
         mainAxisAlignment: mainSpaceBet,
         crossAxisAlignment: crossStart,
@@ -156,7 +158,7 @@ class CardDetailsScreen extends StatelessWidget {
               text,
               style: TextStyle(
                 color: CustomColor.primaryTextColor.withOpacity(0.7),
-                fontSize: Dimensions.smallestTextSize,
+                fontSize: Get.width * 0.04,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -167,7 +169,7 @@ class CardDetailsScreen extends StatelessWidget {
               text2,
               style: TextStyle(
                 color: textColor,
-                fontSize: Dimensions.extraSmallTextSize,
+                fontSize: Get.width * 0.04,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -176,105 +178,4 @@ class CardDetailsScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-_balanceWidget(BuildContext context,
-    {required String balance, required Color color}) {
-  return Container(
-    // height: MediaQuery.of(context).size.height * 0.17,
-    padding:
-        EdgeInsets.symmetric(vertical: Dimensions.defaultPaddingSize * 0.1),
-    width: MediaQuery.of(context).size.width,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(Dimensions.radius * 1.5),
-      color: color.withOpacity(0.8),
-    ),
-    child: Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: Dimensions.defaultPaddingSize * 0.5,
-          vertical: Dimensions.defaultPaddingSize * 0.4),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: Dimensions.heightSize * 3,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Balance \$ $balance.00',
-                style: TextStyle(
-                  fontSize: Dimensions.largeTextSize,
-                  fontWeight: FontWeight.w900,
-                  color: color == CustomColor.secondaryColor
-                      ? CustomColor.primaryTextColor
-                      : CustomColor.secondaryColor,
-                ),
-              ),
-              // Image.asset(
-              //   Strings.cardFrontImagePath,
-              //   height: Dimensions.heightSize * 1.5,
-              // ),
-            ],
-          ),
-          // SizedBox(
-          //   height: Dimensions.heightSize * 2,
-          // ),
-          SizedBox(
-            height: Dimensions.heightSize * 0.5,
-          ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     Text(
-          //       'SATISH JAYWANT KADAM',
-          //       style: TextStyle(
-          //           fontSize: Dimensions.mediumTextSize,
-          //           fontWeight: FontWeight.w600,
-          //           color: CustomColor.primaryTextColor),
-          //     ),
-          //     // Image.asset(Strings.balanceImagePath),
-          //   ],
-          // ),
-          // SizedBox(
-          //   height: Dimensions.heightSize * 2,
-          // ),
-          // Text(
-          //   Strings.balance,
-          //   style: TextStyle(
-          //       fontSize: Dimensions.smallTextSize,
-          //       fontWeight: FontWeight.w600,
-          //       color: CustomColor.primaryTextColor),
-          // ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     Text(
-          //       '\$ $balance.00',
-          //       style: TextStyle(
-          //           fontSize: Dimensions.largeTextSize,
-          //           fontWeight: FontWeight.w900,
-          //           color: CustomColor.primaryTextColor),
-          //     ),
-          //   ],
-          // ),
-
-          SizedBox(
-            height: Dimensions.heightSize * 2,
-          ),
-          Text(
-            '19/10/2024',
-            style: TextStyle(
-              fontSize: Dimensions.smallTextSize,
-              fontWeight: FontWeight.w600,
-              color: color == CustomColor.secondaryColor
-                  ? CustomColor.primaryTextColor
-                  : CustomColor.secondaryColor,
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
 }
